@@ -15,7 +15,7 @@ and the Flutter guide for
 
 `remove_video_location` is a Flutter plugin that strips selected metadata from video files **without re-encoding**. The plugin remuxes the original tracks using platform-native frameworks so the process stays fast and lossless.
 
-### 💡 Why this plugin?
+### Why this plugin?
 
 It's important to remove location metadata from user-uploaded videos to protect privacy and prevent location-based stalking. FFmpeg-based solutions are too large and complex to bundle, while EXIF-focused plugins only work for photos. `remove_video_location` addresses that gap with a focused, minimal package built specifically for removing location metadata of videos.
 
@@ -74,6 +74,6 @@ By default the plugin writes a sibling file with the suffix `_clean`. Pass an `o
 - Only the listed metadata fields are currently removed.
 - You must pass file-system paths that your app can read and write. Request the necessary storage permissions on Android when accessing shared storage.
 
-### 🤝 Contributing
+### Contributing
 
 Contributions are welcome! Please open an issue with your proposal before submitting a pull request. See the [CHANGELOG](CHANGELOG.md) for release notes.
