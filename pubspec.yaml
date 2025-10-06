@@ -1,6 +1,6 @@
 name: remove_video_location
 description: "Strip location and related metadata from video files without re-encoding."
-version: 0.0.1
+version: 0.9.1
 repository: https://github.com/Shawn-sudo/remove_video_location
 issue_tracker: https://github.com/Shawn-sudo/remove_video_location/issues
 
