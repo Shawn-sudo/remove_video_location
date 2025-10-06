@@ -2,22 +2,21 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:remove_video_metadata/remove_video_metadata.dart';
-import 'package:remove_video_metadata/remove_video_metadata_platform_interface.dart';
+import 'package:remove_video_location/remove_video_location.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  group('RemoveVideoMetadata', () {
+  group('RemoveVideoLocation', () {
     late Directory tempDir;
-    late FakeRemoveVideoMetadataPlatform fakePlatform;
+    late FakeRemoveVideoLocationPlatform fakePlatform;
 
     setUp(() {
       tempDir = Directory.systemTemp.createTempSync(
-        'remove_video_metadata_test',
+        'remove_video_location_test',
       );
-      fakePlatform = FakeRemoveVideoMetadataPlatform();
-      RemoveVideoMetadataPlatform.instance = fakePlatform;
+      fakePlatform = FakeRemoveVideoLocationPlatform();
+      RemoveVideoLocationPlatform.instance = fakePlatform;
     });
 
     tearDown(() {
@@ -31,7 +30,7 @@ void main() {
         ..writeAsBytesSync(List<int>.generate(8, (i) => i));
       final outputFile = File('${tempDir.path}/output.mp4');
 
-      final resultPath = await RemoveVideoMetadata.instance.removeMetadata(
+      final resultPath = await RemoveVideoLocation.instance.removeMetadata(
         inputPath: inputFile.path,
         outputPath: outputFile.path,
         fields: const {
@@ -60,7 +59,7 @@ void main() {
       final occupied = File('${tempDir.path}/clip_clean.mp4')
         ..writeAsBytesSync(const [1, 2, 3]);
 
-      final resultPath = await RemoveVideoMetadata.instance.removeMetadata(
+      final resultPath = await RemoveVideoLocation.instance.removeMetadata(
         inputPath: inputFile.path,
         fields: const {VideoMetadataField.location},
       );
@@ -82,7 +81,7 @@ void main() {
   });
 }
 
-class FakeRemoveVideoMetadataPlatform extends RemoveVideoMetadataPlatform {
+class FakeRemoveVideoLocationPlatform extends RemoveVideoLocationPlatform {
   String? lastInputPath;
   String? lastOutputPath;
   Set<VideoMetadataField>? lastFields;

@@ -2,17 +2,19 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'remove_video_metadata_platform_interface.dart';
+import 'remove_video_location_platform_interface.dart';
 import 'src/video_metadata_field.dart';
 
 export 'src/video_metadata_field.dart';
+export 'remove_video_location_platform_interface.dart'
+    show RemoveVideoLocationPlatform;
 
-/// Facade for removing metadata from video files.
-class RemoveVideoMetadata {
-  RemoveVideoMetadata._();
+/// Facade for removing selected metadata from video files.
+class RemoveVideoLocation {
+  RemoveVideoLocation._();
 
   /// Singleton instance for convenience.
-  static final RemoveVideoMetadata instance = RemoveVideoMetadata._();
+  static final RemoveVideoLocation instance = RemoveVideoLocation._();
 
   /// Removes the requested [fields] from the video located at [inputPath].
   ///
@@ -46,7 +48,7 @@ class RemoveVideoMetadata {
       overwrite: overwrite,
     );
 
-    await RemoveVideoMetadataPlatform.instance.removeMetadata(
+    await RemoveVideoLocationPlatform.instance.removeMetadata(
       inputPath: inputFile.path,
       outputPath: resolvedOutputPath,
       fields: resolvedFields,

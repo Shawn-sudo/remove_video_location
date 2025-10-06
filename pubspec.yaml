@@ -1,7 +1,8 @@
-name: remove_video_metadata
-description: "Strip selected metadata from video files without re-encoding."
+name: remove_video_location
+description: "Strip location and related metadata from video files without re-encoding."
 version: 0.0.1
-homepage:
+repository: https://github.com/Shawn-sudo/remove_video_location
+issue_tracker: https://github.com/Shawn-sudo/remove_video_location/issues
 
 environment:
   sdk: ^3.8.1
@@ -26,7 +27,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.remove_video_metadata
-        pluginClass: RemoveVideoMetadataPlugin
+        package: com.example.remove_video_location
+        pluginClass: RemoveVideoLocationPlugin
       ios:
-        pluginClass: RemoveVideoMetadataPlugin
+        pluginClass: RemoveVideoLocationPlugin

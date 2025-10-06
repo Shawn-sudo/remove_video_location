@@ -11,9 +11,9 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-## remove_video_metadata
+## remove_video_location
 
-`remove_video_metadata` is a Flutter plugin that strips selected metadata from video files **without re-encoding**. The plugin remuxes the original tracks using platform-native frameworks so the process stays fast and lossless.
+`remove_video_location` is a Flutter plugin that strips selected metadata from video files **without re-encoding**. The plugin remuxes the original tracks using platform-native frameworks so the process stays fast and lossless.
 
 ### 💡 Why this plugin?
 
@@ -32,7 +32,7 @@ Add the dependency to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  remove_video_metadata: ^0.0.1
+  remove_video_location: ^0.0.1
 ```
 
 Then fetch packages:
@@ -44,10 +44,10 @@ flutter pub get
 ### 🚀 Usage
 
 ```dart
-import 'package:remove_video_metadata/remove_video_metadata.dart';
+import 'package:remove_video_location/remove_video_location.dart';
 
 Future<void> cleanVideo() async {
-  final cleanedPath = await RemoveVideoMetadata.instance.removeMetadata(
+  final cleanedPath = await RemoveVideoLocation.instance.removeMetadata(
     inputPath: '/storage/emulated/0/DCIM/Camera/VID_123.mp4',
     fields: const {
       VideoMetadataField.location,

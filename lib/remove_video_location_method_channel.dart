@@ -1,13 +1,13 @@
 import 'package:flutter/services.dart';
 
-import 'remove_video_metadata_platform_interface.dart';
+import 'remove_video_location_platform_interface.dart';
 import 'src/video_metadata_field.dart';
 
-/// An implementation of [RemoveVideoMetadataPlatform] that communicates with the
+/// An implementation of [RemoveVideoLocationPlatform] that communicates with the
 /// host platform over a method channel.
-class MethodChannelRemoveVideoMetadata extends RemoveVideoMetadataPlatform {
-  MethodChannelRemoveVideoMetadata({MethodChannel? channel})
-    : _channel = channel ?? const MethodChannel('remove_video_metadata');
+class MethodChannelRemoveVideoLocation extends RemoveVideoLocationPlatform {
+  MethodChannelRemoveVideoLocation({MethodChannel? channel})
+    : _channel = channel ?? const MethodChannel('remove_video_location');
 
   final MethodChannel _channel;
 

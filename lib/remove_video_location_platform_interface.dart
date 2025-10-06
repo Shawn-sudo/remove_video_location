@@ -1,24 +1,24 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'remove_video_metadata_method_channel.dart';
+import 'remove_video_location_method_channel.dart';
 import 'src/video_metadata_field.dart';
 
-/// Platform interface for the remove_video_metadata plugin.
-abstract class RemoveVideoMetadataPlatform extends PlatformInterface {
-  RemoveVideoMetadataPlatform() : super(token: _token);
+/// Platform interface for the remove_video_location plugin.
+abstract class RemoveVideoLocationPlatform extends PlatformInterface {
+  RemoveVideoLocationPlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static RemoveVideoMetadataPlatform _instance =
-      MethodChannelRemoveVideoMetadata();
+  static RemoveVideoLocationPlatform _instance =
+      MethodChannelRemoveVideoLocation();
 
-  /// The default instance of [RemoveVideoMetadataPlatform] to use.
-  static RemoveVideoMetadataPlatform get instance => _instance;
+  /// The default instance of [RemoveVideoLocationPlatform] to use.
+  static RemoveVideoLocationPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
-  /// platform-specific class that extends [RemoveVideoMetadataPlatform] when
+  /// platform-specific class that extends [RemoveVideoLocationPlatform] when
   /// they register themselves.
-  static set instance(RemoveVideoMetadataPlatform instance) {
+  static set instance(RemoveVideoLocationPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }

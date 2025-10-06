@@ -1,4 +1,4 @@
-group 'com.example.remove_video_metadata'
+group 'com.example.remove_video_location'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -24,7 +24,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace "com.example.remove_video_metadata"
+    namespace "com.example.remove_video_location"
     compileSdkVersion 34
 
     defaultConfig {

@@ -1,14 +1,14 @@
 import AVFoundation
 
-public class SwiftRemoveVideoMetadataPlugin: NSObject, FlutterPlugin {
-  private let workQueue = DispatchQueue(label: "com.example.remove_video_metadata.work")
+public class SwiftRemoveVideoLocationPlugin: NSObject, FlutterPlugin {
+  private let workQueue = DispatchQueue(label: "com.example.remove_video_location.work")
 
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(
-      name: "remove_video_metadata",
+      name: "remove_video_location",
       binaryMessenger: registrar.messenger()
     )
-    let instance = SwiftRemoveVideoMetadataPlugin()
+    let instance = SwiftRemoveVideoLocationPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
